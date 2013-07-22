@@ -1,0 +1,15 @@
+*.pyc
+*.swp
+*~
+build
+dist
+heat_cfnclient.egg-info
+.venv
+AUTHORS
+ChangeLog
+.tox
+.coverage
+cover
+.testrepository
+.project
+.pydevproject
