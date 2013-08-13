@@ -21,6 +21,7 @@ import subprocess
 basepath = os.path.join(heat_cfnclient.__path__[0], os.path.pardir)
 
 
+@testtools.skip
 class CliTest(testtools.TestCase):
 
     def test_heat_cfn(self):
