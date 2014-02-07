@@ -14,7 +14,7 @@ DESCRIPTION
 heat-cfn is a command-line utility for heat. It is simply an
 interface for adding, modifying, and retrieving information about the stacks
 belonging to a user.  It is a convenience application that talks to the heat
-CloudFormation API compatable server.
+CloudFormation API compatible server.
 
 
 CONFIGURATION
