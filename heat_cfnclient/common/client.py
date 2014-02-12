@@ -22,8 +22,8 @@ import functools
 import httplib
 import os
 import urllib
-import urlparse
 
+import six.moves.urllib.parse as urlparse
 try:
     from eventlet.green import socket
     from eventlet.green import ssl

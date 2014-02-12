@@ -18,8 +18,10 @@
 """Heat exception subclasses"""
 
 import functools
-import urlparse
 import sys
+
+import six.moves.urllib.parse as urlparse
+
 from heat_cfnclient.openstack.common.gettextutils import _
 from heat_cfnclient.openstack.common import exception
 

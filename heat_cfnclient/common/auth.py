@@ -30,7 +30,8 @@ Keystone (an identity management system).
 """
 import httplib2
 import json
-import urlparse
+
+import six.moves.urllib.parse as urlparse
 
 from heat_cfnclient.common import exception
 
