@@ -312,7 +312,8 @@ class BaseClient(object):
         self.use_ssl = parsed.scheme == 'https'
         if self.host is None:
             self.host = parsed.hostname
-        self.port = parsed.port or 80
+        std_port = 443 if self.use_ssl else self.DEFAULT_PORT
+        self.port = parsed.port or std_port
         self.doc_root = parsed.path
 
         # ensure connection kwargs are re-evaluated after the service catalog
