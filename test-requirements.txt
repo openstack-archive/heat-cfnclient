@@ -1,11 +1,11 @@
-# Install bounded pep8/pyflakes first, then let flake8 install
-pep8==1.4.5
-pyflakes==0.7.2
-flake8==2.0
-hacking>=0.5.3,<0.6
+# The order of packages is significant, because pip processes them in the order
+# of appearance. Changing the order has an impact on the overall integration
+# process, which may cause wedges in the gate later.
 
-coverage
+# Hacking already pins down pep8, pyflakes and flake8
+hacking>=0.8.0,<0.9
+coverage>=3.6
 discover
-mox==0.5.3
-testtools>=0.9.29
-testrepository>=0.0.13
+mox>=0.5.3
+testrepository>=0.0.18
+testtools>=0.9.36,!=1.2.0

@@ -13,34 +13,33 @@
 #    under the License.
 
 
-import testtools
-import heat_cfnclient
 import os
 import subprocess
+import testtools
+
+import heat_cfnclient
 
 basepath = os.path.join(heat_cfnclient.__path__[0], os.path.pardir)
 
 
-@testtools.skip
 class CliTest(testtools.TestCase):
-
     def test_heat_cfn(self):
-            self.bin_run('heat-cfn')
+        self.bin_run('heat-cfn')
 
     def test_heat_boto(self):
-            self.bin_run('heat-boto')
+        self.bin_run('heat-boto')
 
     def test_heat_watch(self):
-            self.bin_run('heat-watch')
+        self.bin_run('heat-watch')
 
     def bin_run(self, bin):
-            fullpath = basepath + '/bin/' + bin
+        fullpath = basepath + '/bin/' + bin
 
-            proc = subprocess.Popen(fullpath,
-                                    stdout=subprocess.PIPE,
-                                    stderr=subprocess.PIPE)
-            stdout, stderr = proc.communicate()
+        proc = subprocess.Popen(fullpath,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.PIPE)
+        stdout, stderr = proc.communicate()
 
-            if proc.returncode:
-                print('Error executing %s:\n %s %s ' % (bin, stdout, stderr))
-                raise subprocess.CalledProcessError(proc.returncode, bin)
+        if proc.returncode:
+            print('Error executing %s:\n %s %s ' % (bin, stdout, stderr))
+            raise subprocess.CalledProcessError(proc.returncode, bin)

@@ -3,7 +3,7 @@
 *~
 build
 dist
-heat_cfnclient.egg-info
+*.egg-info
 .venv
 AUTHORS
 ChangeLog
