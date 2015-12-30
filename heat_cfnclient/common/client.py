@@ -64,7 +64,7 @@ def handle_redirects(func):
 
     @functools.wraps(func)
     def wrapped(self, method, url, body, headers):
-        for _ in xrange(MAX_REDIRECTS):
+        for _dum in xrange(MAX_REDIRECTS):
             try:
                 return func(self, method, url, body, headers)
             except exception.RedirectException as redirect:

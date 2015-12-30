@@ -1,4 +1,4 @@
-pbr>=0.6,!=0.7,<1.0
+pbr>=1.6
 PyCrypto>=2.1.0
 boto>=2.4.0
 eventlet>=0.15.2

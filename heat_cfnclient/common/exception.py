@@ -122,7 +122,7 @@ class Forbidden(OpenstackException):
     message = _("You are not authorized to complete this action.")
 
 
-#NOTE(bcwaldon): here for backwards-compatability, need to deprecate.
+# NOTE(bcwaldon): here for backwards-compatability, need to deprecate.
 class NotAuthorized(Forbidden):
     message = _("You are not authorized to complete this action.")
 

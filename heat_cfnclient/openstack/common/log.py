@@ -40,7 +40,7 @@ import os
 import sys
 import traceback
 
-from oslo.config import cfg
+from oslo_config import cfg
 
 from heat_cfnclient.openstack.common.gettextutils import _  # noqa
 from heat_cfnclient.openstack.common import importutils
