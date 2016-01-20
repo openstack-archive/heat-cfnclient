@@ -5,7 +5,6 @@ eventlet>=0.15.2
 greenlet>=0.3.2
 httplib2>=0.7.5
 iso8601>=0.1.9
-argparse
 lxml>=2.3
 python-keystoneclient>=0.11.1
 six>=1.7.0
