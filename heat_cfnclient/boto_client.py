@@ -19,7 +19,7 @@ Client implementation based on the boto AWS client library
 
 import sys
 
-from heat_cfnclient.openstack.common import log as logging
+from oslo_log import log as logging
 logger = logging.getLogger(__name__)
 
 from boto.cloudformation import CloudFormationConnection

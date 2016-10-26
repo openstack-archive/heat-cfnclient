@@ -20,8 +20,7 @@
 System-level utilities and helper functions.
 """
 
-from heat_cfnclient.openstack.common import log as logging
-
+from oslo_log import log as logging
 
 LOG = logging.getLogger(__name__)
 

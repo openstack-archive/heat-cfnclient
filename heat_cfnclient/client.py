@@ -20,8 +20,7 @@ Client classes for callers of a heat system
 from lxml import etree
 from heat_cfnclient.common import client as base_client
 from heat_cfnclient.common import exception
-
-from heat_cfnclient.openstack.common import log as logging
+from oslo_log import log as logging
 
 logger = logging.getLogger(__name__)
 
