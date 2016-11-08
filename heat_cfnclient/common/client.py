@@ -35,7 +35,7 @@ from heat_cfnclient.common import auth
 from heat_cfnclient.common import exception
 from heat_cfnclient.common import utils
 
-from heat_cfnclient.openstack.common.gettextutils import _
+from heat_cfnclient._i18n import _
 
 
 # common chunk size for get and put

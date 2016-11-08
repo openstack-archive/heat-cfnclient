@@ -22,14 +22,45 @@ import sys
 
 import six.moves.urllib.parse as urlparse
 
-from heat_cfnclient.openstack.common.gettextutils import _
-from heat_cfnclient.openstack.common import exception
+from heat_cfnclient._i18n import _
+
+_FATAL_EXCEPTION_FORMAT_ERRORS = False
 
 
-OpenstackException = exception.OpenstackException
-NotFound = exception.NotFound
-Error = exception.Error
-InvalidContentType = exception.InvalidContentType
+class Error(Exception):
+    def __init__(self, message=None):
+        super(Error, self).__init__(message)
+
+
+class NotFound(Error):
+    pass
+
+
+class OpenstackException(Exception):
+    """Base Exception class.
+    To correctly use this class, inherit from it and define
+    a 'message' property. That message will get printf'd
+    with the keyword arguments provided to the constructor.
+    """
+    message = "An unknown exception occurred"
+
+    def __init__(self, **kwargs):
+        try:
+            self._error_string = self.message % kwargs
+
+        except Exception:
+            if _FATAL_EXCEPTION_FORMAT_ERRORS:
+                raise
+            else:
+                # at least get the core message out if something happened
+                self._error_string = self.message
+
+    def __str__(self):
+        return self._error_string
+
+
+class InvalidContentType(OpenstackException):
+    message = "Invalid content type %(content_type)s"
 
 
 class RedirectException(Exception):

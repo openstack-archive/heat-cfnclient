@@ -35,7 +35,7 @@ import six.moves.urllib.parse as urlparse
 
 from heat_cfnclient.common import exception
 
-from heat_cfnclient.openstack.common.gettextutils import _
+from heat_cfnclient._i18n import _
 
 
 class BaseStrategy(object):

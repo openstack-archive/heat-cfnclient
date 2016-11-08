@@ -29,6 +29,7 @@ import logging
 
 import httplib
 
+import oslo_i18n
 from six.moves.urllib.parse import urlparse
 # If ../heat_cfnclient/__init__.py exists, add ../ to Python search path, so
 # that it will override what happens to be installed in $prefix/lib/python...
@@ -41,9 +42,7 @@ if os.path.exists(
 
 scriptname = os.path.basename(sys.argv[0])
 
-from heat_cfnclient.openstack.common import gettextutils
-
-gettextutils.install('heat_cfnclient')
+oslo_i18n.install('heat_cfnclient')
 
 if scriptname == 'heat-boto':
     from heat_cfnclient import boto_client as heat_client
