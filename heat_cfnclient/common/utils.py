@@ -20,10 +20,6 @@
 System-level utilities and helper functions.
 """
 
-from oslo_log import log as logging
-
-LOG = logging.getLogger(__name__)
-
 
 def chunkreadable(iter, chunk_size=65536):
     """
