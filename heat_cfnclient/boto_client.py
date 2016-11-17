@@ -22,10 +22,10 @@ import sys
 from oslo_log import log as logging
 logger = logging.getLogger(__name__)
 
-from boto.cloudformation import CloudFormationConnection
+from boto import cloudformation
 
 
-class BotoClient(CloudFormationConnection):
+class BotoClient(cloudformation.CloudFormationConnection):
     '''
     Wrapper class for boto CloudFormationConnection class
     '''

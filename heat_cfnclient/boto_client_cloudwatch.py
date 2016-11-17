@@ -23,10 +23,10 @@ from oslo_log import log as logging
 
 logger = logging.getLogger(__name__)
 
-from boto.ec2.cloudwatch import CloudWatchConnection
+from boto.ec2 import cloudwatch
 
 
-class BotoCWClient(CloudWatchConnection):
+class BotoCWClient(cloudwatch.CloudWatchConnection):
     '''
     Wrapper class for boto CloudWatchConnection class
     '''
