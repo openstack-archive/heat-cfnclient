@@ -1,5 +1,4 @@
 pbr>=1.6
-PyCrypto>=2.1.0
 boto>=2.4.0
 eventlet>=0.15.2
 greenlet>=0.3.2
