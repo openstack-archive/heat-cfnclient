@@ -27,7 +27,7 @@ import sys
 import time
 import logging
 
-import httplib
+import six.moves.http_client as httplib
 
 import oslo_i18n
 from six.moves.urllib.parse import urlparse
@@ -131,7 +131,7 @@ def template_validate(options, arguments):
     c = get_client(options)
     parameters.update(c.format_parameters(options))
     result = c.validate_template(**parameters)
-    print c.format_template(result)
+    print(c.format_template(result))
 
 
 @utils.catch_error('estimatetemplatecost')
@@ -154,7 +154,7 @@ def estimate_template_cost(options, arguments):
     c = get_client(options)
     parameters.update(c.format_parameters(options))
     result = c.estimate_template_cost(**parameters)
-    print result
+    print(result)
 
 
 @utils.catch_error('gettemplate')
@@ -172,7 +172,7 @@ def get_template(options, arguments):
 
     c = get_client(options)
     result = c.get_template(**parameters)
-    print result
+    print(result)
 
 
 @utils.catch_error('create')
@@ -215,7 +215,7 @@ def stack_create(options, arguments):
     c = get_client(options)
     parameters.update(c.format_parameters(options))
     result = c.create_stack(**parameters)
-    print result
+    print(result)
 
 
 @utils.catch_error('update')
@@ -256,7 +256,7 @@ def stack_update(options, arguments):
     c = get_client(options)
     parameters.update(c.format_parameters(options))
     result = c.update_stack(**parameters)
-    print result
+    print(result)
 
 
 @utils.catch_error('delete')
@@ -278,7 +278,7 @@ def stack_delete(options, arguments):
 
     c = get_client(options)
     result = c.delete_stack(**parameters)
-    print result
+    print(result)
 
 
 @utils.catch_error('describe')
@@ -296,7 +296,7 @@ def stack_describe(options, arguments):
 
     c = get_client(options)
     result = c.describe_stacks(**parameters)
-    print c.format_stack(result)
+    print(c.format_stack(result))
 
 
 @utils.catch_error('event-list')
@@ -314,7 +314,7 @@ def stack_events_list(options, arguments):
 
     c = get_client(options)
     result = c.list_stack_events(**parameters)
-    print c.format_stack_event(result)
+    print(c.format_stack_event(result))
 
 
 @utils.catch_error('resource')
@@ -326,7 +326,7 @@ def stack_resource_show(options, arguments):
     try:
         stack_name, resource_name = arguments
     except ValueError:
-        print 'Enter stack name and logical resource id'
+        print('Enter stack name and logical resource id')
         return
 
     parameters = {
@@ -334,7 +334,7 @@ def stack_resource_show(options, arguments):
         'LogicalResourceId': resource_name,
     }
     result = c.describe_stack_resource(**parameters)
-    print c.format_stack_resource_detail(result)
+    print(c.format_stack_resource_detail(result))
 
 
 @utils.catch_error('resource-list')
@@ -346,14 +346,14 @@ def stack_resources_list(options, arguments):
     try:
         stack_name = arguments.pop(0)
     except IndexError:
-        print 'Enter stack name'
+        print('Enter stack name')
         return
 
     parameters = {
         'StackName': stack_name,
     }
     result = c.list_stack_resources(**parameters)
-    print c.format_stack_resource_summary(result)
+    print(c.format_stack_resource_summary(result))
 
 
 @utils.catch_error('resource-list-details')
@@ -376,7 +376,7 @@ def stack_resources_list_details(options, arguments):
         name_or_pid = arguments.pop(0)
     except IndexError:
         logging.error("Must pass a stack_name or physical_resource_id")
-        print usage
+        print(usage)
         return
 
     logical_resource_id = arguments.pop(0) if arguments else None
@@ -388,11 +388,11 @@ def stack_resources_list_details(options, arguments):
     result = c.describe_stack_resources(**parameters)
 
     if result:
-        print c.format_stack_resource(result)
+        print(c.format_stack_resource(result))
     else:
         logging.error("Invalid stack_name, physical_resource_id " +
                       "or logical_resource_id")
-        print usage
+        print(usage)
 
 
 @utils.catch_error('list')
@@ -404,7 +404,7 @@ def stack_list(options, arguments):
     '''
     c = get_client(options)
     result = c.list_stacks()
-    print c.format_stack_summary(result)
+    print(c.format_stack_summary(result))
 
 
 def get_client(options):
@@ -595,7 +595,7 @@ def print_help(options, args):
 
     subst = {'prog': os.path.basename(sys.argv[0])}
     docs = [lookup_command(parser, cmd).__doc__ % subst for cmd in args]
-    print '\n\n'.join(docs)
+    print('\n\n'.join(docs))
 
 
 def lookup_command(parser, command_name):

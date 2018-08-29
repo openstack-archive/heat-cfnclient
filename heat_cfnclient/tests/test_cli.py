@@ -40,6 +40,6 @@ class CliTest(testtools.TestCase):
                                 stderr=subprocess.PIPE)
         stdout, stderr = proc.communicate()
 
-        if proc.returncode:
-            print('Error executing %s:\n %s %s ' % (bin, stdout, stderr))
-            raise subprocess.CalledProcessError(proc.returncode, bin)
+        self.assertFalse(proc.returncode,
+                         'Error executing %s:\n %s %s ' % (bin,
+                                                           stdout, stderr))

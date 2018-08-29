@@ -20,6 +20,7 @@
 import functools
 import sys
 
+import six
 import six.moves.urllib.parse as urlparse
 
 from heat_cfnclient._i18n import _
@@ -118,7 +119,7 @@ def wrap_exception(notifier=None, publisher_id=None, event_type=None,
                                     payload)
 
                 # re-raise original exception since it may have been clobbered
-                raise exc_info[0], exc_info[1], exc_info[2]
+                six.reraise(*exc_info)
 
         return functools.wraps(f)(wrapped)
     return inner

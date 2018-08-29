@@ -19,11 +19,12 @@
 
 import collections
 import functools
-import httplib
 import os
 import urllib
 
+import six
 import six.moves.urllib.parse as urlparse
+import six.moves.http_client as httplib
 try:
     from eventlet.green import socket
     from eventlet.green import ssl
@@ -64,7 +65,7 @@ def handle_redirects(func):
 
     @functools.wraps(func)
     def wrapped(self, method, url, body, headers):
-        for _dum in xrange(MAX_REDIRECTS):
+        for _dum in range(MAX_REDIRECTS):
             try:
                 return func(self, method, url, body, headers)
             except exception.RedirectException as redirect:
@@ -434,7 +435,7 @@ class BaseClient(object):
                 return method.lower() in ('post', 'put')
 
             def _simple(body):
-                return body is None or isinstance(body, basestring)
+                return body is None or isinstance(body, six.string_types)
 
             def _filelike(body):
                 return hasattr(body, 'read')
