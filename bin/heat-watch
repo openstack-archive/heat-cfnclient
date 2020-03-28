@@ -29,6 +29,11 @@ import logging
 
 import oslo_i18n
 
+from heat_cfnclient import boto_client_cloudwatch as heat_client
+from heat_cfnclient.version import version_info as version
+from heat_cfnclient.common import exception
+from heat_cfnclient import utils
+
 # If ../heat/__init__.py exists, add ../ to Python search path, so that
 # it will override what happens to be installed in $prefix/lib/python...
 possible_topdir = os.path.normpath(os.path.join(os.path.abspath(sys.argv[0]),
@@ -42,10 +47,6 @@ scriptname = os.path.basename(sys.argv[0])
 
 oslo_i18n.install('heat_cfnclient')
 
-from heat_cfnclient import boto_client_cloudwatch as heat_client
-from heat_cfnclient.version import version_info as version
-from heat_cfnclient.common import exception
-from heat_cfnclient import utils
 
 DEFAULT_PORT = 8003
 

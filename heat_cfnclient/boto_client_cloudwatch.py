@@ -21,9 +21,9 @@ import sys
 
 from oslo_log import log as logging
 
-logger = logging.getLogger(__name__)
-
 from boto.ec2 import cloudwatch
+
+logger = logging.getLogger(__name__)
 
 
 class BotoCWClient(cloudwatch.CloudWatchConnection):
@@ -181,10 +181,10 @@ class BotoCWClient(cloudwatch.CloudWatchConnection):
 
         ret = []
         for m in metlist:
-                ret.append("MetricName : %s" % m.name)
-                ret.append("Namespace  : %s" % m.namespace)
-                ret.append("Dimensions : %s" % m.dimensions)
-                ret.append("--")
+            ret.append("MetricName : %s" % m.name)
+            ret.append("Namespace  : %s" % m.namespace)
+            ret.append("Dimensions : %s" % m.dimensions)
+            ret.append("--")
         return '\n'.join(ret)
 
 

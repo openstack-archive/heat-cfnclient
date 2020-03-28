@@ -20,9 +20,10 @@ Client implementation based on the boto AWS client library
 import sys
 
 from oslo_log import log as logging
-logger = logging.getLogger(__name__)
 
 from boto import cloudformation
+
+logger = logging.getLogger(__name__)
 
 
 class BotoClient(cloudformation.CloudFormationConnection):

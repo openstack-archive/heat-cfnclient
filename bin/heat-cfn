@@ -31,6 +31,12 @@ import six.moves.http_client as httplib
 
 import oslo_i18n
 from six.moves.urllib.parse import urlparse
+
+from heat_cfnclient.version import version_info as version
+from heat_cfnclient.common import exception
+from heat_cfnclient import utils
+from keystoneclient.v2_0 import client
+
 # If ../heat_cfnclient/__init__.py exists, add ../ to Python search path, so
 # that it will override what happens to be installed in $prefix/lib/python...
 possible_topdir = os.path.normpath(os.path.join(os.path.abspath(sys.argv[0]),
@@ -48,10 +54,6 @@ if scriptname == 'heat-boto':
     from heat_cfnclient import boto_client as heat_client
 else:
     from heat_cfnclient import client as heat_client
-from heat_cfnclient.version import version_info as version
-from heat_cfnclient.common import exception
-from heat_cfnclient import utils
-from keystoneclient.v2_0 import client
 
 
 def get_swift_template(options):
