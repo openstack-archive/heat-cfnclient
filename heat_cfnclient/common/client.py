@@ -22,9 +22,8 @@ import functools
 import os
 import urllib
 
-import six
-import six.moves.urllib.parse as urlparse
-import six.moves.http_client as httplib
+import urllib.parse as urlparse
+import http.client as httplib
 try:
     from eventlet.green import socket
     from eventlet.green import ssl
@@ -435,7 +434,7 @@ class BaseClient(object):
                 return method.lower() in ('post', 'put')
 
             def _simple(body):
-                return body is None or isinstance(body, six.string_types)
+                return body is None or isinstance(body, str)
 
             def _filelike(body):
                 return hasattr(body, 'read')

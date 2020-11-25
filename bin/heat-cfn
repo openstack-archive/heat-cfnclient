@@ -27,10 +27,10 @@ import sys
 import time
 import logging
 
-import six.moves.http_client as httplib
+import http.client as httplib
 
 import oslo_i18n
-from six.moves.urllib.parse import urlparse
+from urllib.parse import urlparse
 
 from heat_cfnclient.version import version_info as version
 from heat_cfnclient.common import exception
