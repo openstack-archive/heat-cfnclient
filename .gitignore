@@ -1,15 +1,30 @@
 *.pyc
-*.swp
-*~
-build
-dist
+
+# Packages
+*.egg*
 *.egg-info
-.venv
-AUTHORS
-ChangeLog
+dist
+build
+
+# Unit test / coverage reports
+cover/
+.coverage*
+!.coveragerc
 .tox
-.coverage
-cover
-.testrepository
+.stestr/
+.venv
+
+# Mr Developer
 .project
 .pydevproject
+
+# pbr generates these
+AUTHORS
+ChangeLog
+
+# Editors
+*.swp
+*~
+
+# Files created by releasenotes build
+releasenotes/build
