@@ -15,7 +15,6 @@
 
 import functools
 
-import six
 
 from heat_cfnclient.common import exception
 from oslo_log import log as logging
@@ -50,7 +49,7 @@ def catch_error(action):
                 if options.debug:
                     raise
                 LOG.error("Failed to %s. Got error:" % action)
-                pieces = six.text_type(e).split('\n')
+                pieces = str(e).split('\n')
                 for piece in pieces:
                     LOG.error(piece)
                 return FAILURE
