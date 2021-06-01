@@ -22,18 +22,19 @@ Please refer the `heat-cfnclient Core Team
 
 New Feature Planning
 ~~~~~~~~~~~~~~~~~~~~
-heat-cfnclient features are tracked on `Storyboard <https://storyboard.openstack.org/#!/project/openstack/heat-cfnclient>`_.
+heat-cfnclient features are tracked on `Storyboard <https://storyboard.openstack.org/#!/project/openstack/heat>`_.
+Please specify the reported story with `heat-cfnclient`.
 
 Task Tracking
 ~~~~~~~~~~~~~
-We track our tasks in `Storyboard <https://storyboard.openstack.org/#!/project/openstack/heat-cfnclient>`_.
-If you're looking for some smaller, easier work item to pick up and get started
-on, search for the 'low-hanging-fruit' tag.
+We track our tasks in `Storyboard <https://storyboard.openstack.org/#!/project/openstack/heat>`_.
+Please specify the reported story with `heat-cfnclient`.
 
 Reporting a Bug
 ~~~~~~~~~~~~~~~
 You found an issue and want to make sure we are aware of it? You can do so on
-`Storyboard <https://storyboard.openstack.org/#!/project/openstack/heat-cfnclient>`_.
+`Storyboard <https://storyboard.openstack.org/#!/project/openstack/heat>`_.
+Please specify the reported story with `heat-cfnclient`.
 
 Getting Your Patch Merged
 ~~~~~~~~~~~~~~~~~~~~~~~~~
