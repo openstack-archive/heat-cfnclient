@@ -1,9 +1,0 @@
-include AUTHORS
-include ChangeLog
-include CONTRIBUTING.rst
-include HACKING.rst
-include LICENSE
-include README.rst
-include MANIFEST.in pylintrc
-include openstack-common.conf
-include babel.cfg run_tests.sh tox.ini
