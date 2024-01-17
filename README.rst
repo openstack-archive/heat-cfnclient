@@ -1,19 +1,8 @@
-===========================
-Heat CloudFormation Clients
-===========================
+This project is no longer maintained.
 
-Heat server includes API implementations which aim to be CloudFormation and
-CloudWatch compatible. This project contains client utilities which consume
-these APIs. It is recommended that most interaction with Heat is done instead
-through the native REST API, using a client such as python-heatclient.
+The contents of this repository are still available in the Git source code
+management system. To see the contents of this repository before it reached its
+end of life, please check out the previous commit with "git checkout HEAD^1".
 
-Utilities in this repository include:
-heat-cfn   - Manages heat templates via Heat's legacy CloudFormation API
-heat-boto  - As for heat-cfn, but using the boto library to access 
-             Heat's legacy CloudFormation API
-heat-watch - An admin utility to manage alarms and metrics via Heat's minimal
-             CloudWatch compatible API.
-
-Related projects
-----------------
-* http://wiki.openstack.org/Heat
+For any further questions, please email openstack-discuss@lists.openstack.org
+or join #openstack-dev on OFTC.
